@@ -73,7 +73,7 @@ public class UserController {
                         Model model) {
         model.addAttribute("error", error);
         model.addAttribute("exception", exception);
-        return "/user/user-login";
+        return "user/user-login";
         //return "/user/user-login";
     }
 

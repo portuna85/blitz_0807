@@ -45,7 +45,7 @@ public class UserController {
 
     @GetMapping("/auth/join")
     public String join() {
-        return "/user/user-join";
+        return "user/user-join";
     }
 
     /* 회원가입 */
@@ -61,12 +61,13 @@ public class UserController {
                 model.addAttribute(key, validatorResult.get(key));
             }
             /* 회원가입 페이지로 다시 리턴 */
-            return "/user/user-join";
+            return "user/user-join";
         }
         userService.userJoin(dto);
-        return "redirect:/auth/login";
+        return "redirect:auth/login";
     }
 
+    /** 일반 로그인 */
     @GetMapping("/auth/login")
     public String login(@RequestParam(value = "error", required = false)String error,
                         @RequestParam(value = "exception", required = false)String exception,
@@ -85,7 +86,7 @@ public class UserController {
         if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
-        return "redirect:/";
+        return "redirect:";
     }
 
     /* 회원정보 수정 */
@@ -94,6 +95,6 @@ public class UserController {
         if (user != null) {
             model.addAttribute("user", user);
         }
-        return "/user/user-modify";
+        return "user/user-modify";
     }
 }

@@ -61,10 +61,12 @@ public class UserController {
                 model.addAttribute(key, validatorResult.get(key));
             }
             /* 회원가입 페이지로 다시 리턴 */
-            return "/user/user-join";
+            return "user/user-join";
+            //return "/user/user-join";
         }
         userService.userJoin(dto);
-        return "redirect:/auth/login";
+        return "redirect:auth/login";
+        //return "redirect:/auth/login";
     }
 
     @GetMapping("/auth/login")
@@ -73,7 +75,8 @@ public class UserController {
                         Model model) {
         model.addAttribute("error", error);
         model.addAttribute("exception", exception);
-        return "/user/user-login";
+        return "user/user-login";
+        //return "/user/user-login";
     }
 
     /* Security에서 로그아웃은 기본적으로 POST지만, GET으로 우회 */

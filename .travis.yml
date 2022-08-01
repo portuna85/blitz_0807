@@ -8,7 +8,7 @@ branches:
 
 ####### 권한 추가 #######
 before_install:
-  - chmod +x gradlew
+  - sudo chmod +x gradlew
 
 # Travis CI 서버의 홈
 cache:

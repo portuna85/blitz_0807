@@ -8,6 +8,7 @@ note/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+
 ### STS ###
 .apt_generated
 .classpath

@@ -64,7 +64,7 @@ public class UserController {
             return "user/user-join";
         }
         userService.userJoin(dto);
-        return "redirect:auth/login";
+        return "redirect:/login";
     }
 
     /** 일반 로그인 */

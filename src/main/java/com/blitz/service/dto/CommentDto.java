@@ -50,8 +50,8 @@ public class CommentDto {
     public static class Response {
         private Long id;
         private String comment;
-        private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
-        private String modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
+        private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM.dd HH:mm"));
+        private String modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM.dd HH:mm"));
         private String nickname;
         private Long userId;
         private Long postsId;

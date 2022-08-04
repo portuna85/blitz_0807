@@ -17,4 +17,5 @@ public class BlitzApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(BlitzApplication.class, args);
     }
+
 }

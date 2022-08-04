@@ -1,10 +1,12 @@
 package com.blitz.controller;
 
+import com.blitz.domain.User;
 import com.blitz.service.UserService;
 import com.blitz.service.dto.UserDto;
 import com.blitz.service.security.auth.LoginUser;
 import com.blitz.service.validator.CustomValidators;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -25,6 +27,7 @@ import java.util.Map;
 /**
  * 회원 관련 Controller
  */
+@Slf4j
 @RequiredArgsConstructor
 @Controller
 public class UserController {
@@ -35,6 +38,7 @@ public class UserController {
     private final CustomValidators.NicknameValidator NicknameValidator;
     private final CustomValidators.UsernameValidator UsernameValidator;
 
+    User user = new User();
     /**
      *  커스텀 유효성 검증을 위해 추가
      */
